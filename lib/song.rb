@@ -4,11 +4,11 @@ class Song
   
   def initialize(name)
     @name = name
-    save #Any particular reason to handle save in private?
+    save #Good practice to keep save private
   end
   
   def self.all
-    @@all.dup.freeze #Dup Freeze?
+    @@all.dup.freeze #Freezes objects so nothing else can modify. DUP = duplicating object
   end
   
   def self.new_by_filename(filename)
